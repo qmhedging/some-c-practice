@@ -8,7 +8,7 @@ int fac(int n)
 
 if (n==0) return 1;
 
-    else return fac(n-1);
+    else return n*fac(n-1);
 
 
 }
@@ -20,7 +20,7 @@ main()
 
     printf("please input N:\n");
 
-    scanf("%d",n);
+    scanf("%d",&n);
 
     printf("Factorial = %d",fac(n));
 
