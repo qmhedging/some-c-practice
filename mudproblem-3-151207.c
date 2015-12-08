@@ -6,14 +6,16 @@
 
 
 
-typedef struct {int classnum;int classpopulation;int mud[3];char name[maxname];} KIDS;// define the kids type ,with mud dimensions and a name
+typedef struct {int classnum;int classpopulation;int mud[3];char name[maxname];int mudvolume} KIDS;// define the kids type ,with mud dimensions and a name
+
+void tellpair(KIDS,int,int);//pick up a pair from a certain class
 
 main()
 
 {
-    KIDS a[][];
 
-    int numberofclass,i,j;
+
+    int numberofclass,classpopulation,i,j;
 
 
 
@@ -21,55 +23,58 @@ main()
 
     scanf("%d",&numberofclass);
 
-    for (i=0;i<numberofclass,i++)
+
+    for (i=0;i<numberofclass;i++)
 
     {
 
+    printf("Please input number of students for  the class %d:\n",i+1);
+
+    scanf("%d",&classpopulation);
 
 
-    a[i].classnum = i+1;
 
-    printf("Please input number of students in the class:\n");
-
-    scanf("%d",&a[i].classpopulation);
-
-    while (a[i].classpopulation != -1)
+    while (classpopulation != -1)
 
 
 
     {
+        KIDS a[numberofclass][classpopulation];// define a array of type KIDS
+
         //char arr[numberofclass];
 
-        for (j=0;j<a[i].classpopulation;j++)
+        for (j=0;j<classpopulation;j++)
 
            {
 
-
+            //input the kids data
 
 
 
             printf("the name of student\n");
 
-            scanf("%s",a[j].name);
+            scanf("%s",&a[i][j].name);
 
-            printf("so the student name is %s\n",studentname.name);
+            printf("so the student name is %s\n",a[i][j].name);
 
 
 
             printf("the length of mud\n");
-            scanf("%d",&studentname.mud[1]);//done
+            scanf("%d",&a[i][j].mud[1]);//done
 
 
             printf("the width of mud\n");
-            scanf("%d",&studentname.mud[2]);//done
+            scanf("%d",&a[i][j].mud[2]);//done
 
             printf("the height of mud\n");
-            scanf("%d",&studentname.mud[3]);//done
+            scanf("%d",&a[i][j].mud[3]);//done
 
-            printf("%d\n",studentname.mud[1]*studentname.mud[2]*studentname.mud[3]);
+            a[i][j].mudvolume = a[i][j].mud[1]*a[i][j].mud[2]*a[i][j].mud[3];
 
 
+            a[i][j].classpopulation = j;
 
+            a[i][j].classnum = i;
 
 
 
@@ -77,9 +82,11 @@ main()
 
 
            }
+
+      tellpair(a,i,classpopulation);// tellpair function only need two inputs:the class num and class population
       printf("next class,how many students in the class? \n");
 
-      scanf("%d",&studentname.classpopulation);
+      scanf("%d",&classpopulation);
 
     }
 
@@ -88,5 +95,38 @@ main()
     return 0;
 }
 
+void tellpair(a,n,m)
 
+
+{
+    int n1,n2;
+
+    for (n1=0;n1<m;n1++)
+    {
+        for (n2=n1;n2<m;n2++)
+
+        {
+            if (a[n][n1].mudvolume+a[n][n2].mudvolume==500) && (a[n][n1].mudvolume > a[n][n2].mudvolume)
+
+            {
+                printf("%s took clay from %s.",a[n][n1].name,a[n][n2]);
+
+                break;
+
+            }
+
+
+
+            else if (a[n][n1].mudvolume+a[n][n2].mudvolume==500) && (a[n][n1].mudvolume < a[n][n2].mudvolume)
+
+            {
+                printf("%s took clay from %s.",a[n][n1].name,a[n][n2]);
+
+                break;
+            }
+        }
+    }
+
+
+}
 

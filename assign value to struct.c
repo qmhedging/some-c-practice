@@ -1,4 +1,4 @@
-//assign value to struct
+//assign value to struct for one member
 
 #include<stdio.h>
 
