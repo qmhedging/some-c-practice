@@ -9,9 +9,12 @@ void fileoutput(FILE *);
 main()
 
 {
+
+    char filename1="testfile.txt";
+
     FILE * fpin, * fpout;
 
-    fpin =fopen("newlist151208.txt","r");//open the source file
+    fpin =fopen(filename1,"r");//open the source file
 
     fpout =fopen("targetfile.txt","w");//open the target file
 
@@ -49,12 +52,12 @@ void fileoutput(FILE * fp)
 
     printf("the content of the target file are :\n");
 
-    fp=fopen("newlist151208.txt","r");
+    fp=fopen("testfile.txt","r");
 
-    if ((fp=fopen("newlist151208.txt","r"))==NULL)
+    if ((fp=fopen("testfile.txt","r"))==NULL)
 
     {
-        printf("can't open the file");
+        printf("can't open the file\n");
 
         exit(0);
     }
