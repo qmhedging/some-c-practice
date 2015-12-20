@@ -2,13 +2,15 @@
 
 #include <string.h>
 
+#include <stdlib.h>
+
 #define maxname 20
 
 
 
-typedef struct {int classnum;int classpopulation;int mud[3];char name[maxname];int mudvolume} KIDS;// define the kids type ,with mud dimensions and a name
+typedef struct {int classnum;int classpopulation;int mud[3];char name[maxname];int mudvolume;} KIDS;// define the kids type ,with mud dimensions and a name
 
-void tellpair(KIDS,int,int);//pick up a pair from a certain class
+void tellpair(KIDS *,int,int);//pick up a pair from a certain class
 
 main()
 
@@ -17,7 +19,7 @@ main()
 
     int numberofclass,classpopulation,i,j;
 
-
+    numberofclass = 2;
 
     printf("Please enter the number of total classes:\n");
 
@@ -39,7 +41,7 @@ main()
 
 
     {
-        KIDS a[numberofclass][classpopulation];// define a array of type KIDS
+        KIDS  a[numberofclass][9],* g[9];// define a array of type KIDS and a pointer to copy that array
 
         //char arr[numberofclass];
 
@@ -83,10 +85,14 @@ main()
 
            }
 
-      tellpair(a,i,classpopulation);// tellpair function only need two inputs:the class num and class population
+           g[i]=a[i]; //copy the array of one class to g,not feasible
+
+      tellpair(*g,i,classpopulation);// tellpair function only need two inputs:the class num and class population
       printf("next class,how many students in the class? \n");
 
       scanf("%d",&classpopulation);
+
+      g[i]=NULL;//clear g
 
     }
 
@@ -95,21 +101,24 @@ main()
     return 0;
 }
 
-void tellpair(a,n,m)
+void tellpair(KIDS * g,int n,int m)
 
 
 {
     int n1,n2;
+
+
 
     for (n1=0;n1<m;n1++)
     {
         for (n2=n1;n2<m;n2++)
 
         {
-            if (a[n][n1].mudvolume+a[n][n2].mudvolume==500) && (a[n][n1].mudvolume > a[n][n2].mudvolume)
+            if ((g[n1].mudvolume+g[n2].mudvolume==500) && (g[n1].mudvolume > g[n2].mudvolume))
 
             {
-                printf("%s took clay from %s.",a[n][n1].name,a[n][n2]);
+                puts(g[n1].name);
+                printf("%s took clay from %s.\n",g[n1].name,g[n2].name);
 
                 break;
 
@@ -117,10 +126,10 @@ void tellpair(a,n,m)
 
 
 
-            else if (a[n][n1].mudvolume+a[n][n2].mudvolume==500) && (a[n][n1].mudvolume < a[n][n2].mudvolume)
+            else if ((g[n1].mudvolume+g[n2].mudvolume==500) && (g[n1].mudvolume < g[n2].mudvolume))
 
             {
-                printf("%s took clay from %s.",a[n][n1].name,a[n][n2]);
+                printf("%s took clay from %s.\n",g[n1].name,g[n2].name);
 
                 break;
             }

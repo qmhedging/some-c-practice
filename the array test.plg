@@ -1,0 +1,38 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: the array test - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\Users\ThinkPad\AppData\Local\Temp\RSP4B1F.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /Fp"Debug/the array test.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"F:\work\R practice\c practice\some-c-practice\the array test.cpp"
+"F:\work\R practice\c practice\some-c-practice\getchartest.cpp"
+]
+Creating command line "cl.exe @C:\Users\ThinkPad\AppData\Local\Temp\RSP4B1F.tmp" 
+Creating temporary file "C:\Users\ThinkPad\AppData\Local\Temp\RSP4B20.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /incremental:yes /pdb:"Debug/the array test.pdb" /debug /machine:I386 /out:"Debug/the array test.exe" /pdbtype:sept 
+".\Debug\the array test.obj"
+".\Debug\getchartest.obj"
+]
+Creating command line "link.exe @C:\Users\ThinkPad\AppData\Local\Temp\RSP4B20.tmp"
+<h3>Output Window</h3>
+Compiling...
+the array test.cpp
+getchartest.cpp
+Linking...
+getchartest.obj : error LNK2005: _main already defined in the array test.obj
+Debug/the array test.exe : fatal error LNK1169: one or more multiply defined symbols found
+Error executing link.exe.
+
+
+
+<h3>Results</h3>
+the array test.exe - 2 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

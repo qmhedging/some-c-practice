@@ -10,11 +10,11 @@ main()
 
 {
 
-    char filename1="testfile.txt";
+    //char filename1="testfile.txt";
 
     FILE * fpin, * fpout;
 
-    fpin =fopen(filename1,"r");//open the source file
+    fpin =fopen("testfile.txt","r");//open the source file
 
     fpout =fopen("targetfile.txt","w");//open the target file
 
@@ -49,6 +49,8 @@ void fileoutput(FILE * fp)
 
 {
     char ch;
+
+
 
     printf("the content of the target file are :\n");
 
