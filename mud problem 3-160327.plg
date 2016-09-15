@@ -1,0 +1,47 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: mud problem 3-160327 - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\Users\ThinkPad\AppData\Local\Temp\RSP51DF.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /Fp"Debug/mud problem 3-160327.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"F:\work\R practice\c practice\some-c-practice\mud problem 3-160327.c"
+]
+Creating command line "cl.exe @C:\Users\ThinkPad\AppData\Local\Temp\RSP51DF.tmp" 
+Creating temporary file "C:\Users\ThinkPad\AppData\Local\Temp\RSP51E0.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /incremental:yes /pdb:"Debug/mud problem 3-160327.pdb" /debug /machine:I386 /out:"Debug/mud problem 3-160327.exe" /pdbtype:sept 
+".\Debug\mud problem 3-160327.obj"
+]
+Creating command line "link.exe @C:\Users\ThinkPad\AppData\Local\Temp\RSP51E0.tmp"
+<h3>Output Window</h3>
+Compiling...
+mud problem 3-160327.c
+F:\work\R practice\c practice\some-c-practice\mud problem 3-160327.c(67) : error C2057: expected constant expression
+F:\work\R practice\c practice\some-c-practice\mud problem 3-160327.c(67) : error C2466: cannot allocate an array of constant size 0
+F:\work\R practice\c practice\some-c-practice\mud problem 3-160327.c(67) : error C2133: 'result' : unknown size
+F:\work\R practice\c practice\some-c-practice\mud problem 3-160327.c(93) : warning C4047: 'function' : 'char *' differs in levels of indirection from 'char '
+F:\work\R practice\c practice\some-c-practice\mud problem 3-160327.c(93) : warning C4024: 'strcpy' : different types for formal and actual parameter 1
+F:\work\R practice\c practice\some-c-practice\mud problem 3-160327.c(95) : warning C4047: 'function' : 'char *' differs in levels of indirection from 'char '
+F:\work\R practice\c practice\some-c-practice\mud problem 3-160327.c(95) : warning C4024: 'strcat' : different types for formal and actual parameter 1
+F:\work\R practice\c practice\some-c-practice\mud problem 3-160327.c(97) : warning C4047: 'function' : 'char *' differs in levels of indirection from 'char '
+F:\work\R practice\c practice\some-c-practice\mud problem 3-160327.c(97) : warning C4024: 'strcat' : different types for formal and actual parameter 1
+F:\work\R practice\c practice\some-c-practice\mud problem 3-160327.c(111) : error C2065: 'class_num' : undeclared identifier
+F:\work\R practice\c practice\some-c-practice\mud problem 3-160327.c(115) : error C2065: 'result' : undeclared identifier
+F:\work\R practice\c practice\some-c-practice\mud problem 3-160327.c(115) : error C2109: subscript requires array or pointer type
+F:\work\R practice\c practice\some-c-practice\mud problem 3-160327.c(115) : error C2109: subscript requires array or pointer type
+F:\work\R practice\c practice\some-c-practice\mud problem 3-160327.c(115) : warning C4047: 'function' : 'const char *' differs in levels of indirection from 'int '
+F:\work\R practice\c practice\some-c-practice\mud problem 3-160327.c(115) : warning C4024: 'puts' : different types for formal and actual parameter 1
+Error executing cl.exe.
+
+
+
+<h3>Results</h3>
+mud problem 3-160327.exe - 7 error(s), 8 warning(s)
+</pre>
+</body>
+</html>
